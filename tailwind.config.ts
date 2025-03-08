@@ -16,18 +16,18 @@ const config: Config = {
       colors: {
         primary: {
           "100": "#FFE8F0",
-          DEFAULT: "#EE2B69",
+          "500": "#EE2B69",
         },
         secondary: "#FBE843",
         black: {
           "100": "#333333",
           "200": "#141413",
           "300": "#7D8087",
-          DEFAULT: "#000000",
+          "500": "#000000",
         },
         white: {
           "100": "#F7F7F7",
-          DEFAULT: "#FFFFFF",
+          "500": "#FFFFFF",
         },
       },
       fontFamily: {
