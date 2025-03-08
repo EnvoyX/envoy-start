@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { auth, signIn, signOut } from "../auth";
+import { auth, signIn, signOut } from "../app/auth";
 
 const Navbar = async () => {
   const session = await auth();

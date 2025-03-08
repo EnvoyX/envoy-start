@@ -155,7 +155,7 @@
 
 /* searchform */
 @utility search-form {
-  @apply max-w-3xl w-full min-h-[80px] bg-white border-[5px] border-black rounded-[80px] text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
+  @apply max-w-3xl w-full min-h-[80px] bg-white border-[5px] border-black rounded-lg text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
 }
 
 @utility search-input {
