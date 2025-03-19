@@ -6,14 +6,14 @@ const Navbar = async () => {
   return (
     <div className="px-5 py-3 bg-white shadow-md font-work-sans text-black">
       <nav className="flex justify-between items-center">
-        <div>
+        <Link href={`/`}>
           <span className="text-xl font-bold text-black antialiased">
             Envoy
           </span>
           <span className="text-xl font-bold text-teal-500 antialiased">
             Start
           </span>
-        </div>
+        </Link>
         <div className="flex items-center gap-5">
           {session && session?.user ? (
             <>
