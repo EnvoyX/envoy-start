@@ -9,6 +9,7 @@ import { formSchema } from "@/lib/validation";
 import { z } from "zod";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { createIdea } from "@/lib/action";
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [pitch, setPitch] = useState("**Hello world!!!**");
@@ -22,17 +23,16 @@ const StartupForm = () => {
         link: formData.get("link") as string,
         pitch,
       };
-
       await formSchema.parseAsync(formValues);
       console.log(formValues);
-      // const result = await createIdea(prevState, formData, pitch)
-      // if (result.status == "SUCCESS") {
-      //   toast.success("Success", {
-      //     description: "Submitted Successfully",
-      //   });
-      //   router.push(`/startup/${result.id}`);
-      // }
-      // return result;
+      const result = await createIdea(prevState, formData, pitch);
+      if (result.status == "SUCCESS") {
+        toast.success("Success", {
+          description: "Submitted Successfully",
+        });
+        router.push(`/startup/${result._id}`);
+      }
+      return result;
     } catch (error) {
       if (error instanceof z.ZodError) {
         // get specific field error
@@ -57,7 +57,6 @@ const StartupForm = () => {
     error: "",
     status: "INITIAL",
   });
-
   return (
     <form action={formAction} className="startup-form">
       <div>
