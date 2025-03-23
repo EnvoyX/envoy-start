@@ -68,7 +68,7 @@ const StartupForm = () => {
           name="title"
           className="startup-form_input"
           type="text"
-          placeholder="Startup Title"
+          placeholder="Post Title"
           required
         />
         {errors.title && <p className="startup-form_error">{errors.title}</p>}
@@ -81,7 +81,7 @@ const StartupForm = () => {
           id="description"
           name="description"
           className="startup-form_textarea"
-          placeholder="Startup Description"
+          placeholder="Post Description"
           required
         />
         {errors.description && (
@@ -97,7 +97,7 @@ const StartupForm = () => {
           name="category"
           className="startup-form_input"
           type="text"
-          placeholder="Startup Category (Tech, Health, Education...)"
+          placeholder="Post Category (Tech, Health, Education...)"
           required
         />
         {errors.category && (
@@ -113,14 +113,14 @@ const StartupForm = () => {
           name="link"
           className="startup-form_input"
           type="text"
-          placeholder="Startup Image URL"
+          placeholder="Post Image URL"
           required
         />
         {errors.link && <p className="startup-form_error">{errors.link}</p>}
       </div>
       <div data-color-mode="light">
         <label htmlFor="pitch" className="startup-form_label">
-          Pitch
+          Details
         </label>
         <MDEditor
           id="pitch"

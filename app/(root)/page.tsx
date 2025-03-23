@@ -20,15 +20,15 @@ export default async function Home({
   return (
     <>
       <section suppressHydrationWarning className="pink_container">
-        <h1 className="heading">Connect with Enterpreneurs</h1>
+        <h1 className="heading">Connect with Me!</h1>
         <p className="sub-heading !max-w-3xl">
-          Submit Ideas, Vote, and Get Noticed!
+          Follow Me and Visit By Blog to Get Latest Update!
         </p>
         <SearchForm query={query}></SearchForm>
       </section>
       <section className="section_container">
         <p className="text-30-semibold">
-          {query ? `Search results for ${query}` : "All Startups"}
+          {query ? `Search results for ${query}` : "All Blogs"}
         </p>
         <ul className="mt-7 card_grid">
           {posts?.length > 0 ? (
@@ -36,7 +36,7 @@ export default async function Home({
               <StartupCard key={post?._id} post={post} />
             ))
           ) : (
-            <p className="no-result">No startups found</p>
+            <p className="no-result">No blogs found</p>
           )}
         </ul>
       </section>
