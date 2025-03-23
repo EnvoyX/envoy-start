@@ -39,7 +39,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
         <Link href={`/user/${author?._id}`}>
           <Image
             src={author?.image as string}
-            alt="placeholder"
+            alt={author?.name as string}
             width={48}
             height={48}
             className="rounded-full"

@@ -1,10 +1,15 @@
 import Link from "next/link";
 import { auth, signIn, signOut } from "../app/auth";
+import { BadgePlus, LogOut } from "lucide-react";
+import { Avatar, AvatarImage } from "./ui/avatar";
 
 const Navbar = async () => {
   const session = await auth();
   return (
-    <div className="px-5 py-3 bg-white shadow-md font-work-sans text-black">
+    <div
+      suppressHydrationWarning
+      className="px-5 py-3 bg-white shadow-md font-work-sans text-black"
+    >
       <nav className="flex justify-between items-center">
         <Link href={`/`}>
           <span className="text-xl font-bold text-black antialiased">
@@ -18,7 +23,8 @@ const Navbar = async () => {
           {session && session?.user ? (
             <>
               <Link href="/startup/create">
-                <span>Create</span>
+                <span className="max-sm:hidden ">Create</span>
+                <BadgePlus className="size-6 sm:hidden" />
               </Link>
               <form
                 action={async () => {
@@ -27,11 +33,18 @@ const Navbar = async () => {
                   await signOut({ redirectTo: "/" });
                 }}
               >
-                <button type="submit">Sign Out</button>
+                <button type="submit">
+                  <span className="max-sm:hidden ">Sign Out</span>
+                  <LogOut className="size-6 sm:hidden text-teal-500 mt-1"></LogOut>
+                </button>
               </form>
-
               <Link href={`/user/${session?.id}`}>
-                <span>{session?.user?.name}</span>
+                <Avatar className="size-10">
+                  <AvatarImage
+                    src={session?.user?.image}
+                    alt={session?.user?.name || ""}
+                  ></AvatarImage>
+                </Avatar>
               </Link>
             </>
           ) : (

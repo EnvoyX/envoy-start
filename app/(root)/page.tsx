@@ -19,7 +19,7 @@ export default async function Home({
   // console.log(JSON.stringify(posts, null, 2));
   return (
     <>
-      <section className="pink_container">
+      <section suppressHydrationWarning className="pink_container">
         <h1 className="heading">Connect with Enterpreneurs</h1>
         <p className="sub-heading !max-w-3xl">
           Submit Ideas, Vote, and Get Noticed!
